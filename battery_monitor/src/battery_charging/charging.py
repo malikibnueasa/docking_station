@@ -1,0 +1,2 @@
+def char():
+	print("char")

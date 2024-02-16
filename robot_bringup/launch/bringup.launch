@@ -1,0 +1,22 @@
+<launch>
+    
+    <!-- Gazebo Launch File -->
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch"/>
+
+    <!-- Navigation and Rviz -->
+    <include file="$(find turtlebot3_navigation)/launch/turtlebot3_navigation.launch"/>
+
+    <!-- Loop Navigation -->
+    <node name="loop_navigation" pkg="loop_navigation_control" type="loop_navigation.py" output="screen"/>
+
+    <!-- Battery Manager -->
+    <node name="battery_manager" pkg="battery_monitor" type="battery_monitor_node.py" output="screen"/>
+
+    <!-- Docking starting service -->
+    <node name="python_node" pkg="docking_control" type="docking_control_node.py" output="screen"/>
+
+    <!-- Docking Aruco Tag -->
+    <node name="docking_aruco" pkg="docking_control" type="docking_aruco.py" output="screen"/>
+
+
+</launch>

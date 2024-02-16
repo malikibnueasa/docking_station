@@ -1,0 +1,25 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/opt/ros/noetic/include/**",
+        "/home/king/try_ws/src/ar_model/include/**",
+        "/home/king/catkin_ws/src/goal_pub/include/**",
+        "/home/king/catkin_ws/src/image_vector/include/**",
+        "/home/king/catkin_ws/src/inverse_kinematics/include/**",
+        "/home/king/catkin_ws/src/trajectory_controll_pub/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

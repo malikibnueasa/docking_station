@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+    <param name="robot_description" textfile="$(find ar_model)/urdf/ar_tag_model.urdf" />
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find turtlebot3_gazebo)/worlds/work_world.world"/>
+        <arg name="paused" value="false"/>
+        <arg name="use_sim_time" value="false"/>
+        <arg name="gui" value="false"/>
+        <arg name="headless" value="false"/>
+        <arg name="debug" value="false"/>
+    </include>
+
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"  args="-param robot_description -urdf -model ar_tag_model" />
+
+    <node name="Rsp" pkg="robot_state_publisher" type="robot_state_publisher" output="screen"/>
+
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+</launch>

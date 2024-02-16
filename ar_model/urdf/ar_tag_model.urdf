@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<robot name="box">
+    <link name="world"/>
+
+    <!-- Dummy link -->
+    <!-- <link name="dummy_link"/> -->
+
+    <!-- <joint name="fixed" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="world"/>
+        <child link="dummy_link"/>
+    </joint> -->
+
+    
+    <link name="ar_link">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <visual>
+            <geometry>
+                <box size="0.08 0.08 0.014"/>
+            </geometry>
+            <material name="red">
+                <color rgba="1 0.0 0.0 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.08 0.08 0.014"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="1.0"/>
+            <inertia ixx="0.000549667" ixy="0" ixz="0" iyy="0.000549667" iyz="0" izz="0.001066667"/>
+        </inertial>
+        
+    </link>
+    
+    
+    <joint name="ar_joint" type="fixed">
+        <origin xyz="0.0 2.0 0.04" rpy="1.57 0.0 0.0"/>
+        <parent link="world"/>
+        <child link="ar_link"/>
+    </joint>
+
+    <gazebo reference="base_link">
+        <mu1 value="2000.0"/>
+        <mu2 value="1000.0"/>
+        <kp value="1000000"/>
+        <kd value="1.0"/>
+    </gazebo>
+</robot>
